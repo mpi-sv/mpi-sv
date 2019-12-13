@@ -1,0 +1,14 @@
+#!/bin/bash
+
+export GLOG_minloglevel=0
+export GLOG_stderrthreshold=1
+export GLOG_max_log_size=1
+export GLOG_logtostderr=1
+export GLOG_v=0
+export AZQMPI_NODES=$1
+export AZQMPI_BYSOCKET=0
+export AZQMPI_HOSTS=1
+export AZQMPI_NO_BINDING=1
+
+shift
+$KLEEROOT/klee -lib-MPI -use-directeddfs-search -threaded-all-globals $*
