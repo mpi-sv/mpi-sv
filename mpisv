@@ -11,4 +11,4 @@ export AZQMPI_HOSTS=1
 export AZQMPI_NO_BINDING=1
 
 shift
-$KLEEROOT/klee -lib-MPI -use-directeddfs-search -threaded-all-globals $*
+$KLEEROOT/klee -lib-MPI -threaded-all-globals $*
